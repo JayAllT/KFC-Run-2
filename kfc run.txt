@@ -1,0 +1,8 @@
+-- IJKL controls
+- Speedrun timer
+- Death stats
+- Level in between 2 and 3
+- Music
+- Skins
+- Chicken sounds
+- Perks (maybe)

@@ -1,0 +1,13 @@
+- ammo scattered around + mini colonels you can shoot
+- final boss at end rather than finish line; easy to kill, just have to shoot for a while and avoid attacks
+- slipknot
+- flight
+!- double jump
+!- new bg and aesthetic
+!- fix shadows on ground
+- new death screen/sequence, new start and end screen
+!- work on controls
+- minimap showing colonel position
+- death counter
+- speedrun timer
+- add doom like screen for a few seconds after killing the kfc boss in satan room
