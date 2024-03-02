@@ -10,6 +10,6 @@ public class FinishLine : MonoBehaviour
     void Update()
     {
         rot += rotSpeed * Time.deltaTime;
-        transform.rotation = Quaternion.Euler(new Vector3(90, rot, 0));
+        transform.rotation = Quaternion.Euler(new Vector3(rot, -90, -90));
     }
 }

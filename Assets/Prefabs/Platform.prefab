@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3143393808588402160}
   - component: {fileID: 3143393808588402159}
   - component: {fileID: 3143393808588402158}
-  - component: {fileID: 3143393808588402161}
+  - component: {fileID: 8833400250912707463}
+  - component: {fileID: 4656254884222416094}
   m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3143393808588402163}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 0.3, z: 15.2952}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3143393808588402159
 MeshFilter:
@@ -84,7 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3143393808588402161
+--- !u!65 &8833400250912707463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143393808588402163}
+  m_Material: {fileID: 13400000, guid: 1572b816ebe867241b1972220dd511f4, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &4656254884222416094
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,8 +114,16 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3143393808588402163}
   m_Material: {fileID: 13400000, guid: a5d9506a5a3e155468c557396a2e8316, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0189707, y: 1, z: 1.0072402}
-  m_Center: {x: 0.003906846, y: 0, z: -0.00079114333}
+  serializedVersion: 3
+  m_Size: {x: 1.025, y: 0.9, z: 1.01}
+  m_Center: {x: 0, y: 0, z: 0}
