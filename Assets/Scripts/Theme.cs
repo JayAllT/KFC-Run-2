@@ -11,8 +11,8 @@ public class Theme : MonoBehaviour
     public GameObject rightWall;
     public GameObject platforms;
 
-    public int themeIdx = 0;
-    public string[] themeNames = new string[] { "One", "Two", "Three", "Four", "Five", "Gay", "Melbourne", "MintChoc", "Silver", "Gold" };
+    int themeIdx = 11;
+    [SerializeField] string[] themeNames = new string[12];
 
     void Start()
     {

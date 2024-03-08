@@ -15,7 +15,7 @@ public class LevelProgression : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.z > 540)
+        if (transform.position.z > 660)
 		{
 			// write to save file
 			StreamWriter writer = new StreamWriter(save);

@@ -7,29 +7,28 @@ using UnityEngine.UI;
 public class PlayerDeath : MonoBehaviour
 {
 	[SerializeField] RawImage deathImage;
-	BoxCollider boxCollider;
 	Color32 deathImageColor;
 	
 	public static bool dead = false;
-	private int deathImageFade = 1000;
+	private int deathImageFade = 1500;
 	public bool canDie = true;
+	private float deathTime = 0.9f;
 	
 	void Awake()
 	{
 		deathImage.enabled = false;
-		boxCollider = GetComponent<BoxCollider>();
 		deathImageColor = new Color32(255, 255, 255, 255);
 	}
 	
 	void Update()
 	{
 		if (canDie)
-			{
+		{
 			if (transform.position.y < -3)  // check if player falls off platform
-				Dead(0.5f);
+				Dead(deathTime - 0.2f);
 			
 			if (ColonelSanders.z > transform.position.z)  // check if colonel sanders is further than player
-				Dead(1.5f);
+				Dead(deathTime);
 			
 			// fade death screen
 			if (dead)
@@ -45,22 +44,22 @@ public class PlayerDeath : MonoBehaviour
     void OnTriggerEnter(Collider collider)
 	{
 		if (collider.gameObject.CompareTag("Enemy") && canDie)  // detects if player collides with the side of an enemy
-			Dead(1.5f);
+			Dead(deathTime);
 	}
 	
 	void OnCollisionEnter(Collision collision)
 	{
 		if (collision.gameObject.CompareTag("Lava Platform") && canDie)  // lava platform
-			Dead(1.5f);
+			Dead(deathTime);
 	}
 	
-	void Dead(float time)  // player will fall through floor and level will reset in 2 seconds
+	void Dead(float time)  // level will reset in (time) seconds (not accounting for slow down)
 	{
 		if (!dead)
 		{
 			deathImage.enabled = true;
 
-			Destroy(boxCollider);
+			Time.timeScale = 0.6f;
 			StartCoroutine(Reset(time));
 			
 			dead = true;
@@ -71,6 +70,7 @@ public class PlayerDeath : MonoBehaviour
 	{
 		yield return new WaitForSeconds(time);
 		dead = false;
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }

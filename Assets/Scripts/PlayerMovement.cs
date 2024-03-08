@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private float jumpForce = 10.0f;
 	private float speed = 18.0f;
-	private float decSpeed = 15.0f;
+	private float decSpeed = 5.0f;
 	private float deathDecSpeed = 1.0f;
 	
 	private bool justDied = false;
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 
         // movement
-        if (Input.GetKeyDown("space") && doubleJump)
+        if (Input.GetKeyDown("space") && doubleJump && !PlayerDeath.dead)
         {
             velocity.y = jumpForce;
             doubleJump = false;

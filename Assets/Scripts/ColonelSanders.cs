@@ -6,7 +6,7 @@ public class ColonelSanders : MonoBehaviour
 {
 	private Vector3 scale;
 	
-    private float speed = 17f;
+    private float speed = 15f;
 	private float expand = 0.15f;
 	private float rotSpeed = 50f;
 	private float rotSpeedIncrease = 20f;
