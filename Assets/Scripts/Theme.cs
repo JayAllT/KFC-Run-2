@@ -9,9 +9,11 @@ public class Theme : MonoBehaviour
     public GameObject floor;
     public GameObject leftWall;
     public GameObject rightWall;
+    public GameObject leftWall2;
+    public GameObject rightWall2;
     public GameObject platforms;
 
-    int themeIdx = 11;
+    int themeIdx = 3;
     [SerializeField] string[] themeNames = new string[12];
 
     void Start()
@@ -32,6 +34,8 @@ public class Theme : MonoBehaviour
         rightCorner.GetComponent<MeshRenderer>().material = corner;
         floor.GetComponent<MeshRenderer>().material = floorMat;
         leftWall.GetComponent<MeshRenderer>().material = wall;
+        leftWall2.GetComponent<MeshRenderer>().material = wall;
         rightWall.GetComponent<MeshRenderer>().material = wall;
+        rightWall2.GetComponent<MeshRenderer>().material = wall;
     }
 }

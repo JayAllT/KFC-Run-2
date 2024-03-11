@@ -6,11 +6,13 @@ public class ColonelSanders : MonoBehaviour
 {
 	private Vector3 scale;
 	
-    private float speed = 15f;
+    private float[] speed = new float[] { 15f, 16f, 17, 17.5f };
 	private float expand = 0.15f;
 	private float rotSpeed = 50f;
 	private float rotSpeedIncrease = 20f;
 	private float rot = -30f;
+
+	private int difficulty = 0;  // 0 - 3; easy to hard
 
 	public static float z;
 	
@@ -18,7 +20,7 @@ public class ColonelSanders : MonoBehaviour
 	{
 		z = transform.position.z;
 		scale = transform.localScale;
-		GetComponent<Rigidbody>().velocity = new Vector3(0, 0, speed);  // set z velocity of body to speed
+		GetComponent<Rigidbody>().velocity = new Vector3(0, 0, speed[difficulty]);  // set z velocity of body to speed
 	}
 	
 	void Update()
