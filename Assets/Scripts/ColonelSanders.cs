@@ -12,20 +12,25 @@ public class ColonelSanders : MonoBehaviour
 	private float rotSpeedIncrease = 20f;
 	private float rot = -30f;
 
-	private int difficulty = 0;  // 0 - 3; easy to hard
+	public int difficulty = 0;  // 0 - 3; easy to hard
 
 	public static float z;
+
+	private Rigidbody rb;
 	
 	void Awake()
 	{
 		z = transform.position.z;
 		scale = transform.localScale;
-		GetComponent<Rigidbody>().velocity = new Vector3(0, 0, speed[difficulty]);  // set z velocity of body to speed
-	}
+		rb = GetComponent<Rigidbody>();  // set z velocity of body to speed
+    }
+
 	
 	void Update()
 	{
-		z = transform.position.z;
+		rb.velocity = new Vector3(0, 0, speed[difficulty]);
+
+        z = transform.position.z;
 		
 		scale.x += expand * Time.deltaTime;
 		scale.y += expand * Time.deltaTime;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Theme : MonoBehaviour
@@ -13,11 +14,18 @@ public class Theme : MonoBehaviour
     public GameObject rightWall2;
     public GameObject platforms;
 
-    int themeIdx = 3;
+    int themeIdx = 11;
     [SerializeField] string[] themeNames = new string[12];
 
     void Start()
     {
+        // get theme
+        StreamReader reader = new StreamReader("theme.dat");
+        themeIdx = int.Parse(reader.ReadToEnd());
+        reader.Close();
+
+        Debug.Log(themeIdx);
+
         // get materials based on themeNames & themeIdx
         Material corner = Resources.Load($"Themes/{themeNames[themeIdx]}Corner", typeof(Material)) as Material;
         Material floorMat = Resources.Load($"Themes/{themeNames[themeIdx]}Floor", typeof(Material)) as Material;

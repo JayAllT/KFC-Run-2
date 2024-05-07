@@ -7,6 +7,7 @@ TagManager:
   - Colonel Sanders
   - Enemy
   - Lava Platform
+  - Music
   layers:
   - Default
   - TransparentFX

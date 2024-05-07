@@ -18,9 +18,18 @@ public class PlayerDeath : MonoBehaviour
 	{
 		deathImage.enabled = false;
 		deathImageColor = new Color32(255, 255, 255, 255);
+
+        Time.timeScale = 1f;
+        dead = false;
 	}
-	
-	void Update()
+
+    private void Start()
+    {
+        Time.timeScale = 1f;
+        dead = false;
+    }
+
+    void Update()
 	{
 		if (canDie)
 		{
@@ -33,8 +42,13 @@ public class PlayerDeath : MonoBehaviour
 			// fade death screen
 			if (dead)
 			{
-				if (deathImageColor.a - deathImageFade * Time.deltaTime > 1)
-					deathImageColor.a -= (byte)(deathImageFade * Time.deltaTime);
+				if (deathImageColor.a >= 1)
+				{
+					if (deathImageColor.a - (byte)(deathImageFade * Time.deltaTime) > 0)
+						deathImageColor.a -= (byte)(deathImageFade * Time.deltaTime);
+					else
+						deathImageColor.a = 0;
+				}
 
 				deathImage.color = deathImageColor;
 			}
@@ -53,7 +67,7 @@ public class PlayerDeath : MonoBehaviour
 			Dead(deathTime);
 	}
 	
-	void Dead(float time)  // level will reset in (time) seconds (not accounting for slow down)
+	public void Dead(float time)  // level will reset in (time) seconds (not accounting for slow down)
 	{
 		if (!dead)
 		{
