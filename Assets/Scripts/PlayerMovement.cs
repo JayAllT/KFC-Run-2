@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private float jumpForce = 10.0f;
 	private float speed = 18.0f;
-	private float decSpeed = 5.0f;
+	private float decSpeed = 10.0f;
 	private float deathDecSpeed = 1.0f;
 	
 	private bool justDied = false;
